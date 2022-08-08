@@ -4,6 +4,11 @@ class CatsController < ApplicationController
     render json: cats
   end
 
+  def show
+    cat = Cat.find(params[:id])
+    render json: cat
+  end
+
   def create
     cat = Cat.create(cat_params)
     if cat.valid?
